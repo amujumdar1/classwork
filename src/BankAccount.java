@@ -9,12 +9,12 @@ public class BankAccount {
 		this.pin = pin;
 	}
 	
-	public void deposit (int amount) {
+	public void deposit (float amount) {
 		if (amount < 1) return;
 		balance += amount;
 	}
 	
-	public void withdraw (int amount) {
+	public void withdraw (float amount) {
 		if (amount > balance) return;		
 		balance -= amount;
 	}
