@@ -2,23 +2,21 @@ public class BankAccount {
 	float balance;
 	private int accountNumber;
 	private int pin;
-	AccountHolder bank;
 	
-	public BankAccount(float balance, int accountNumber, int pin, AccountHolder bank) {
+	public BankAccount(float balance, int accountNumber, int pin) {
 		this.balance = balance;
 		this.accountNumber = accountNumber;
 		this.pin = pin;
-		this.bank = bank;
 	}
 	
 	public void deposit (int amount) {
+		if (amount < 1) return;
 		balance += amount;
 	}
 	
-	public boolean withdraw (int amount) {
-		if (amount > balance) return false;		
-		balance -= amount; 
-		return true;
+	public void withdraw (int amount) {
+		if (amount > balance) return;		
+		balance -= amount;
 	}
 	
 	public int getAccountNumber() {
