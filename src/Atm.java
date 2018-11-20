@@ -12,20 +12,21 @@ public class Atm {
 	
 	public static void main(String[] args) {
 		Atm atm = new Atm(setCredentials());
-		atm.showMenu();
-		
-	}
-	
-	public static BankAccount setCredentials(){
-		AccountHolder account = new AccountHolder(34723283,
-				"Johnny Appleseed", "345-765-4967", "1776 Raritan Road");
-		// constructor to set personal information of user
-		
-		return new BankAccount(1000, 7, 2428, account);
-	}
-	
-	private void showMenu() {
 		System.out.println("Welcome to the ATM!");
+		
+		boolean rightAccount = false;
+		do {
+			System.out.print("Account Number: ");
+			
+			long accountInput = in.nextLong();
+			in.nextLine();
+			
+			if (accountInput != 713352114) {
+				System.out.println("Invalid Account Number!");
+			}
+			else rightAccount = true;
+			
+		} while (!rightAccount);
 		
 		boolean rightPin = false; 
 		do {
@@ -40,6 +41,20 @@ public class Atm {
 			else rightPin = true;
 			
 		} while (!rightPin);
+		atm.showMenu();
+		
+	}
+	
+	public static BankAccount setCredentials(){
+		AccountHolder account = new AccountHolder(34723283,
+				"Johnny Appleseed", "345-765-4967", "1776 Raritan Road");
+		// constructor to set personal information of user
+		
+		return new BankAccount(1000, 713352114, 2428, account);
+	}
+	
+	private void showMenu() {
+		
 		
 		System.out.println("Press 1 to withdraw money.");
 		System.out.println("Press 2 to deposit money.");
