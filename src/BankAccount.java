@@ -1,10 +1,10 @@
 public class BankAccount {
 	double balance;
-	private int accountNumber;
+	private long accountNumber;
 	private int pin;
 	AccountHolder account;
 	
-	public BankAccount(double balance, int accountNumber, int pin, AccountHolder account) {
+	public BankAccount(double balance, long accountNumber, int pin, AccountHolder account) {
 		this.balance = balance;
 		this.accountNumber = accountNumber;
 		this.pin = pin;
@@ -27,11 +27,11 @@ public class BankAccount {
 		balance -= amount;
 	}
 	
-	public int getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
 	
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	
